@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-
+    Selamat datang di reviewku kawan-kawan :v
 @endsection
 
 
