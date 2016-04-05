@@ -1,0 +1,53 @@
+.nav-size{
+    width: 100%;
+}
+
+.link-size{
+    min-width: 17%;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #089de3;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #089de3;
+    background-image: none;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #089de3;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #089de3;
+}
+
+.navbar-default {
+    background-color: white;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #089de3;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: none;
+}
+
+.navbar-nav {
+    margin: 10px 2px 0 2px;
+}
