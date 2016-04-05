@@ -1,6 +1,6 @@
 <div id="footer">
     <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-8 col-sm-offset-3 col-md-offset-3 col-lg-offset-2 text-center">
+        <div class="col-sm-6 col-lg-8 col-sm-offset-3 col-lg-offset-2 text-center">
             <div class="row">
                 <div class="col-lg-2 col-lg-offset-5">
                     <h5 class="text-center" style="line-height: 38px; color: white"><strong>Find us: </strong></h5></span>

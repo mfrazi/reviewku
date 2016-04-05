@@ -5,6 +5,7 @@
     <link href="{{ URL::asset('bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/main.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('css/search.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/navbar.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/footer.css') }}" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

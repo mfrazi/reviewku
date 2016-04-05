@@ -2,10 +2,8 @@
 
 @section('title', 'ReviewKu')
 
-<br/>
-<br/>
-@section('navbar')
-    @include('base.navbar')
+@section('header')
+    @include('base.header')
 @endsection
 
 @section('content')
