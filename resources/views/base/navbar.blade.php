@@ -40,4 +40,4 @@
         </div>
     </div>
 </nav>
-<div class=".visible-xs-block, hidden-xs" style="height: 5px; background-color: #089de3"></div>
+<div class="visible-sm-block visible-md-block visible-lg-block hidden-xs" style="height: 5px; background-color: #089de3"></div>
