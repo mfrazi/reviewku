@@ -33,8 +33,26 @@
     <br/>
     <div class="container">
         <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nama</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nama">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Judul Film (nanti ini bisa search kaya google :)</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Judul">
+            </div>
+            <label>Review</label>
             <textarea id="edit" name="content" rows="7"></textarea>
         </form>
+        <br/>
+        <br/>
+        <a href="{{ route('review.thanks') }}" class="btn btn-lg btn-default pull-right">Kirim review</a>
+        <br/>
+        <br/>
     </div>
 @endsection
 

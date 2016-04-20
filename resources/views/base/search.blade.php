@@ -8,9 +8,9 @@
                 <div class="input-group stylish-input-group">
                     <input name="search" type="text" class="form-control"  placeholder="Search" >
                     <span class="input-group-addon">
-                        <button type="submit">
+                        <a href="{{ route('search') }}" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
-                        </button>
+                        </a>
                     </span>
                 </div>
             </div>

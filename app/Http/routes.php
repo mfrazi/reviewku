@@ -17,4 +17,8 @@ Route::get('nowplaying', ['uses' => 'Page\NowPlayingController@nowplaying', 'as'
 Route::get('aboutus', ['uses' => 'Page\AboutUsController@aboutus', 'as' => 'aboutus']);
 Route::get('contact', ['uses' => 'Page\ContactController@contact', 'as' => 'contact']);
 
+Route::get('search', ['uses' => 'Page\HomeController@search', 'as' => 'search']);
+
 Route::get('review/write', ['uses' => 'Page\ReviewController@writereview', 'as' => 'review.write']);
+Route::post('review/store', ['uses' => 'Page\ReviewController@storereview', 'as' => 'review.store']);
+Route::get('review/thanks', ['uses' => 'Page\ReviewController@thanksreview', 'as' => 'review.thanks']);

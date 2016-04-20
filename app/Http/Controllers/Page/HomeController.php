@@ -13,4 +13,10 @@ class HomeController extends Controller
         $page = 1;
         return view('page.home', ['page' => $page]);
     }
+
+    public function search(){
+        $page = 1;
+        return view('page.search_result', ['page' => $page]);
+    }
+
 }
