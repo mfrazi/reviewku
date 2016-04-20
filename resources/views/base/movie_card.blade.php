@@ -4,7 +4,7 @@
             <img src="http://vignette2.wikia.nocookie.net/spiderman-films/images/e/e7/Spider-Man_Poster.jpg/revision/latest?cb=20121104090100" class="img-responsive pull-right" style="margin-top: 36%;">
         </div>
         <div class="col-xs-9 col-lg-10">
-            <div><h3>JUDUL (2016)</h3></div>
+            <div><a href="{{ route('review.show', ['id' => 1]) }}"><h3>JUDUL (2016)</h3></a></div>
             <div><h4>tanggal</h4></div>
             <div>
                 The 802.11g allows P2P ad-hoc (non-infrastructure) connection between two Computers with WiFi capabilities. But is it possible, practically or theoretically (as in only on paper but the network would be quirky or unstable) to connect three computers using this feature? Something like a triangular structure? Eg: A <--> B AND B <--> C In such a case can i ping the host C from A directly? (OS is strictly Windows 7) Sorry if the question was asked I could not find it in the forum's archive. Thanks for the help.
