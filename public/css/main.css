@@ -2,9 +2,159 @@ html, body{
     height: 100%;
 }
 
-/**
- * Profile image component
- */
+@media only screen and (max-width: 768px ) {
+    .max-width{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#main-content{
+    margin-top : 4%;
+    margin-buttom: 4%;
+}
+
+/*Search*/
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+/*End search*/
+
+/*Navbar*/
+.nav-size{
+    width: 100%;
+}
+
+.link-size{
+    min-width: 18%;
+}
+
+.link-left{
+    margin-left: 2%;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #089de3;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background: #089de3 none;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #089de3;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #089de3;
+}
+
+.navbar-default {
+    background: white none no-repeat;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #089de3;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: none;
+}
+
+.navbar-nav {
+    margin: 10px 2px 0 2px;
+}
+
+.padding-nav{
+    padding: 0 4% 0 6%;
+}
+
+.navbar-line{
+    width: 90%;
+    margin-left:5%;
+    height: 5px;
+    background-color: #089de3;
+}
+/*End navbar*/
+
+/*Write review*/
+#write-review{
+    padding: 0 2% 2% 2%;
+    background-color: #089de3;
+    border-radius: 3px;
+    border: 2px solid #089de3;
+}
+
+.flat-butt {
+    display: inline-block;
+    margin: 0 5px;
+    font-family: "Lato", sans-serif;
+    font-size: 150%;
+    padding: 12px 20px;
+    border-radius: 7px;
+    color: #089de3;
+    cursor: pointer;
+    outline: 0;
+}
+
+.flat-info-butt {
+    border: solid 2px #089de3;
+    background: white;
+}
+.flat-info-butt:hover {
+    border: solid 2px white;
+    color: white;
+    background: #089de3;
+    text-decoration: none
+}
+/*End Write Review*/
+
+/*Footer*/
+#footer{
+    background-color: #089de3;
+    padding: 0 20px 0 20px;
+}
+
+.icon-media{
+    min-width: 9%;
+    color: white;
+    background-color: gray;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 4px 6px 4px 6px;
+    margin-bottom: 6px;
+}
+
+.icon-media:hover{
+    text-decoration: none;
+    background-color: #089de3;
+    color: white;
+}
+/*End footer*/
+
+/*About us*/
 .profile-header-container{
     margin: 0 auto;
     text-align: center;
@@ -24,9 +174,6 @@ html, body{
     margin-top: 43px;
 }
 
-/**
- * Ranking component
- */
 .rank-label-container {
     margin-top: -19px;
     /* z-index: 1000; */
@@ -38,3 +185,4 @@ html, body{
     padding: 5px 10px 5px 10px;
     border-radius: 27px;
 }
+/*End about us*/

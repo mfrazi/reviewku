@@ -13,4 +13,9 @@ class ReviewController extends Controller
         $page = 2;
         return view('page.review', ['page' => $page]);
     }
+
+    public function writereview(){
+        $page = 2;
+        return view('page.write_review', ['page' => $page]);
+    }
 }

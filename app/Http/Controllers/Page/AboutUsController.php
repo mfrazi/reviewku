@@ -11,6 +11,6 @@ class AboutUsController extends Controller
 {
     public function aboutus(){
         $page = 4;
-        return view('page.aboutus', ['page' => $page]);
+        return view('page.about_us', ['page' => $page]);
     }
 }
