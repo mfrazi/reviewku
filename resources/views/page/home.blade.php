@@ -11,6 +11,7 @@
 @endsection
 
 @section('content')
+    {{ csrf_field() }}
     <br/>
     <div class="container">
         <div class="row text-center">
@@ -39,11 +40,9 @@
                     <h1>Review Terpopuler</h1>
                     <hr/>
                 </div>
-                @include('base.movie_card')
-                @include('base.movie_card')
-                @include('base.movie_card')
-                @include('base.movie_card')
-                @include('base.movie_card')
+                @foreach($data as $d)
+                    @include('base.movie_card')
+                @endforeach
             </div>
             <div class="col-md-3" style="height: 1000px; background-color: white;">
                 <div class="container-fluid">

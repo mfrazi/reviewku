@@ -1,8 +1,10 @@
 @extends('base.master')
 
-@section('title', 'Contact')
+@section('title', 'Tulis Review')
 
 @section('moreStyles')
+    <link href="{{ URL::asset('css/jquery.autocomplete.css') }}" rel="stylesheet" type="text/css" />
+
     <!-- Include Editor style. -->
     <link href="{{ URL::asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
@@ -32,26 +34,39 @@
 @section('content')
     <br/>
     <div class="container">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Nama</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nama">
+        <div class="text-center"><h2>Tulis Review</h2></div>
+        <div class="row">
+            <div class="col col-md-8 col-md-offset-2">
+                <form role="form" data-toggle="validator" method="POST" action="{{ route('review.store') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="input_nama">Nama <sup style="color: red;">*</sup></label>
+                        <input type="text" class="form-control" id="input_nama" placeholder="Nama" name="name" data-error="Nama harus diisi" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_email">Email <sup style="color: red;">*</sup></label>
+                        <input type="email" class="form-control" id="input_email" placeholder="Email" name="email" data-error="Email yang dimasukkan tidak valid" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_judul">Judul film <sup style="color: red;">*</sup></label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input_judul" placeholder="Judul film" name="id_title" data-error="Judul film harus diisi" required>
+                            <a style="cursor: pointer; background-color:white; color:red;" onclick="hapusJudul();" class="input-group-addon" title="Hapus"><i class="fa fa-times"></i></a>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Review</label>
+                        <textarea id="edit" name="content" rows="7"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="flat-butt flat-info-butt pull-right">Kirim review</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Judul Film (nanti ini bisa search kaya google :)</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Judul">
-            </div>
-            <label>Review</label>
-            <textarea id="edit" name="content" rows="7"></textarea>
-        </form>
-        <br/>
-        <br/>
-        <a href="{{ route('review.thanks') }}" class="btn btn-lg btn-default pull-right">Kirim review</a>
-        <br/>
+        </div>
         <br/>
     </div>
 @endsection
@@ -61,7 +76,9 @@
 @endsection
 
 @section('moreScripts')
-        <!-- Include JS files. -->
+    <script type="text/javascript" src="{{ URL::asset('js/validator.js') }}"></script>
+
+    <!-- Include JS files. -->
     <script type="text/javascript" src="{{ URL::asset('froala/js/froala_editor.min.js') }}"></script>
 
     <!-- Include Code Mirror. -->
@@ -102,5 +119,35 @@
                 height: 300
             })
         });
+    </script>
+
+    <script src="{{ URL::asset('js/jquery.autocomplete.js') }}"></script>
+    <script>
+        $('#input_judul').autocomplete({
+            dropdownWidth:'auto',
+            appendMethod:'replace',
+            valid: function () {
+                return true;
+            },
+            source:[
+                function (q, add){
+                    var url = 'http://www.omdbapi.com/?s=';
+                    jQuery.getJSON(url+encodeURIComponent(q), function(data){
+                        var suggestions = [];
+                        if (data.Response) {
+                            jQuery.each(data.Search, function(i, val){
+                                suggestions.push(val.imdbID + " - " + val.Title);
+                            });
+                            add(suggestions);
+                        }
+                    })
+                }
+            ]
+        });
+    </script>
+    <script>
+        function hapusJudul(){
+            document.getElementById('input_judul').value="";
+        }
     </script>
 @endsection

@@ -1,23 +1,23 @@
 <div class="container-fluid" style="background-color: white;">
     <div class="row">
         <div class="col-xs-3 col-lg-2">
-            <img src="http://vignette2.wikia.nocookie.net/spiderman-films/images/e/e7/Spider-Man_Poster.jpg/revision/latest?cb=20121104090100" class="img-responsive pull-right" style="margin-top: 36%;">
+            <img src="{{ $d->poster }}" class="img-responsive pull-right" style="margin-top: 36%;">
         </div>
         <div class="col-xs-9 col-lg-10">
-            <div><a href="{{ route('review.show', ['id' => 1]) }}"><h3>JUDUL (2016)</h3></a></div>
-            <div><h4>tanggal</h4></div>
+            <div><a href="{{ route('review.show', ['id' => 1]) }}"><h3>{{ $d->title }}</h3></a></div>
+            <div><h4>{{ $d->created_at }}</h4></div>
             <div>
-                The 802.11g allows P2P ad-hoc (non-infrastructure) connection between two Computers with WiFi capabilities. But is it possible, practically or theoretically (as in only on paper but the network would be quirky or unstable) to connect three computers using this feature? Something like a triangular structure? Eg: A <--> B AND B <--> C In such a case can i ping the host C from A directly? (OS is strictly Windows 7) Sorry if the question was asked I could not find it in the forum's archive. Thanks for the help.
+                {!! $d->content !!}
                 <a href="#">Baca selanjutnya...</a>
             </div>
             <div style="margin-top: 15px;">
                 <span style="padding: 3px; border: solid 1px blue; margin-right: 10px;">
-                    <span>0</span>
-                    <a href="#" class="fa fa-thumbs-down"></a>
+                    <span id="value_down{{ $d->id }}">{{ $d->thumbs_down }}</span>
+                    <div id="down{{ $d->id }}" style="cursor: pointer;" class="fa fa-thumbs-down"></div>
                 </span>
                 <span style="padding: 3px; border: solid 1px blue; margin-right: 10px;">
-                    <span>1000</span>
-                    <a href="#" class="fa fa-thumbs-up"></a>
+                    <span id="value_up{{ $d->id }}">{{ $d->thumbs_up }}</span>
+                    <div id="up{{ $d->id }}" style="cursor: pointer;" class="fa fa-thumbs-up"></div>
                 </span>
                 <span>
                     <a href="#">
@@ -29,3 +29,41 @@
     </div>
     <hr/>
 </div>
+
+@section('moreScripts')
+<script>
+    $('#up{{ $d->id }}').click(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('input[name="_token"]').val()
+            }
+        });
+
+        $.ajax({
+            url: '{{ route('thumbs_up', ['id' => $d->id]) }}',
+            type: 'POST',
+            success: function (data) {
+                value_up{{ $d->id }}
+                $('#value_up{{ $d->id }}').text(data);
+            }
+        });
+    });
+
+    $('#down{{ $d->id }}').click(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('input[name="_token"]').val()
+            }
+        });
+
+        $.ajax({
+            url: '{{ route('thumbs_down', ['id' => $d->id]) }}',
+            type: 'POST',
+            success: function (data) {
+                value_up{{ $d->id }}
+                $('#value_down{{ $d->id }}').text(data);
+            }
+        });
+    });
+</script>
+@append
