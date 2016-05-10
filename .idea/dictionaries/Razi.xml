@@ -2,6 +2,8 @@
   <dictionary name="Razi">
     <words>
       <w>navbar</w>
+      <w>nowplaying</w>
+      <w>nowplayings</w>
     </words>
   </dictionary>
 </component>

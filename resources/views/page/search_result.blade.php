@@ -16,14 +16,20 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2" style="background-color: white;">
                 <div style="margin: 10px 0 25px 0;">
-                    <h1>Hasil Pencarian</h1>
+                    <h1>Hasil Pencarian "{{ $search }}"</h1>
                     <hr/>
                 </div>
-                @include('base.movie_card')
-                @include('base.movie_card')
-                @include('base.movie_card')
-                @include('base.movie_card')
-                @include('base.movie_card')
+                @if(!count($results))
+                    <h3>Tidak ada hasil pencarian yang ditemukan</h3>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                @endif
+                @foreach($results as $d)
+                    @include('base.review_card')
+                @endforeach
             </div>
         </div>
     </div>

@@ -51,10 +51,10 @@
                     </div>
                     <div class="form-group">
                         <label for="input_judul">Judul film <sup style="color: red;">*</sup></label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="input_judul" placeholder="Judul film" name="id_title" data-error="Judul film harus diisi" required>
-                            <a style="cursor: pointer; background-color:white; color:red;" onclick="hapusJudul();" class="input-group-addon" title="Hapus"><i class="fa fa-times"></i></a>
-                        </div>
+                        @if($title == '')<div class="input-group">@endif
+                            <input type="text" class="form-control" id="input_judul" name="id_title" data-error="Judul film harus diisi" required @if($title != '') readonly @endif>
+                            @if($title == '')<a style="cursor: pointer; background-color:white; color:red;" onclick="hapusJudul();" class="input-group-addon" title="Hapus"><i class="fa fa-times"></i></a>@endif
+                        @if($title == '')</div>@endif
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
@@ -123,6 +123,9 @@
 
     <script src="{{ URL::asset('js/jquery.autocomplete.js') }}"></script>
     <script>
+        $(document).ready(function(){
+            $('#input_judul').val('{{ $title }}')
+        });
         $('#input_judul').autocomplete({
             dropdownWidth:'auto',
             appendMethod:'replace',

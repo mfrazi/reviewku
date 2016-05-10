@@ -11,4 +11,9 @@ class Review extends Model
 
     protected $table = 'reviews';
     protected $dates = ['deleted_at'];
+
+    public function movie()
+    {
+        return $this->belongsTo('App\Movie', 'movie_id', 'id');
+    }
 }

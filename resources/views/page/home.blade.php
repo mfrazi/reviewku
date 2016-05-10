@@ -37,40 +37,32 @@
         <div class="row">
             <div class="col-md-9" style="background-color: white;">
                 <div style="margin: 10px 0 25px 0;">
-                    <h1>Review Terpopuler</h1>
+                    <h1>Film Terpopuler</h1>
                     <hr/>
                 </div>
-                @foreach($data as $d)
-                    @include('base.movie_card')
-                @endforeach
+                <div class="row">
+                    @foreach($movie as $m)
+                        <div class="col-sm-6">
+                            @include('base.movie_card')
+                        </div>
+                    @endforeach
+                </div>
+                {!! $movie->render() !!}
             </div>
             <div class="col-md-3" style="height: 1000px; background-color: white;">
                 <div class="container-fluid">
                     <div style="margin: 10px 0 25px 0;">
-                        <h3 style="line-height: 160%;">Review Terbaru</h3>
+                        <h3 style="line-height: 160%;">Film Terbaru</h3>
                         <hr/>
-                        <div class="container-fluid"style="margin: 0 0 10px 0;">
-                            <h4>Green Mile (1995)</h4>
-                            <span style="padding: 3px; border: solid 1px blue; margin-right: 10px;">
-                                <span>0</span>
-                                <a href="#" class="fa fa-thumbs-down"></a>
-                            </span>
-                            <span style="padding: 3px; border: solid 1px blue; margin-right: 10px;">
-                                <span>1000</span>
-                                <a href="#" class="fa fa-thumbs-up"></a>
-                            </span>
-                            <hr/>
-                        </div>
-                        <div class="container-fluid" style="margin: 0 0 10px 0;">
-                            <h4>The 802.11g allows P2P ad-hoc (non-infrastructure)The 802.11g allows P2P ad-hoc (non-infrastructure) (1995)</h4>
-                            <span style="padding: 3px; border: solid 1px blue; margin-right: 10px;">
-                                <span>0</span>
-                                <a href="#" class="fa fa-thumbs-down"></a>
-                            </span>
-                            <span style="padding: 3px; border: solid 1px blue; margin-right: 10px;">
-                                <span>1000</span>
-                                <a href="#" class="fa fa-thumbs-up"></a>
-                            </span>
+                        <div class="row">
+                            @foreach($new_movies as $nm)
+                                <div class="col-md-6 col-md-offset-3">
+                                    <a href="{{ route('review.movie.show', ['id' => $nm->id]) }}"><img src="{{ $nm->poster }}" class="img-responsive"/></a>
+                                </div>
+                                <div class="col-md-10 col-md-offset-1 text-center" style="margin-bottom: 4%;">
+                                    <a href="{{ route('review.movie.show', ['id' => $nm->id]) }}"><h5>{{ $nm->title }} ({{ $nm->year }})</h5></a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
